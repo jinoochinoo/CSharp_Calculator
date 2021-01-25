@@ -1,0 +1,11 @@
+C:\JSP_TEST\C_workspace\WindowsFormsApp1\bin\Debug\Properties\Settings.Designer.cs
+C:\JSP_TEST\C_workspace\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\JSP_TEST\C_workspace\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\JSP_TEST\C_workspace\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\JSP_TEST\C_workspace\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojAssemblyReference.cache
+C:\JSP_TEST\C_workspace\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Calculator.resources
+C:\JSP_TEST\C_workspace\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\JSP_TEST\C_workspace\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\JSP_TEST\C_workspace\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+C:\JSP_TEST\C_workspace\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\JSP_TEST\C_workspace\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
