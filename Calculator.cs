@@ -10,54 +10,19 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
+        public enum Operators { Add, Sub, Multi, Div }
+
     public partial class Calculator : Form
     {
+
+        public int Result = 0;
+        public bool isNewNum = true;
+        public Operators Opt = Operators.Add;
+
+
         public Calculator()
         {
             InitializeComponent();
-        }
-
-        private void HelloLabel_Click(object sender, EventArgs e)
-        {
-
-            int number1 = 1;
-            int number2 = 2;
-
-            int sum = number1 + number2;
-
-            HelloLabel.Text = sum.ToString();
-        }
-
-        private void SumNumbers_Click(object sender, EventArgs e)
-        {
-            int number1 = 0;
-            int number2 = 0;
-
-            if (String.IsNullOrWhiteSpace(Sum1.Text))
-            {
-                MessageBox.Show("Sum1에 숫자를 입력해주세요");
-                return;
-            }
-            if(int.TryParse(Sum1.Text, out number1) == false)
-            {
-                MessageBox.Show("Sum1에 문자가 아니라 숫자를 입력해주세요");
-                return;
-            }
-
-            if (String.IsNullOrWhiteSpace(Sum2.Text))
-            {
-                MessageBox.Show("Sum2에 숫자를 입력해주세요");
-                return;
-            }
-            if (int.TryParse(Sum2.Text, out number2) == false)
-            {
-                MessageBox.Show("Sum2에 문자가 아니라 숫자를 입력해주세요");
-                return;
-            }
-
-            int sum = number1 + number2;
-            SumResult.Text = Convert.ToString(sum);
-
         }
 
         public int Add(int number1, int number2)
@@ -71,6 +36,53 @@ namespace WindowsFormsApp1
             int sub = number1 - number2;
             return sub;
         }
-        
+
+        public void SetNum(string num)
+        {
+            if (isNewNum)
+            {
+                NumScreen.Text = num;
+                isNewNum = false;
+            }
+            else if (NumScreen.Text == "0")
+                NumScreen.Text = num;
+            else
+                NumScreen.Text = NumScreen.Text + num;
+        }
+
+        private void NumPlus_Click(object sender, EventArgs e)
+        {
+            if(isNewNum == false)
+            {
+            int num = int.Parse(NumScreen.Text);
+            if (Opt == Operators.Add)
+                Result = Add(Result, num);
+            else if (Opt == Operators.Sub)
+                Result = Sub(Result, num);
+
+            NumScreen.Text = Result.ToString();
+            isNewNum = true;
+            }
+            Button optButton = (Button)sender;
+            if (optButton.Text == "+")
+                Opt = Operators.Add;
+            else if (optButton.Text == "-")
+                Opt = Operators.Sub;
+        }
+ 
+        private void NumButton1_Click(object sender, EventArgs e)
+        {
+            Button numButton = (Button)sender;
+            SetNum(numButton.Text);
+        }
+
+        private void NumClear_Click(object sender, EventArgs e)
+        {
+            Result = 0;
+            isNewNum = true;
+            Opt = Operators.Add;
+
+            NumScreen.Text = "0";
+        }
     }
 }
